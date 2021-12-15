@@ -44,11 +44,7 @@ def  vegetables(greeting,selection,pick):
     if vegpick == "None":
         print("Goodbye")
     elif vegpick == "Broccoli":
-        cashier("Broccoli",5,"You have added Broccolli!" )
-<<<<<<< HEAD
         cashier("Broccoli",5,"You have added Broccoli!" )
-=======
->>>>>>> c608ac1 (Update grocerypanda.py)
     elif vegpick == "Carrots":
         cashier("Carrots",6,"You have added Carrots!" )
     elif vegpick == "Tomatoes":
@@ -67,9 +63,9 @@ def fruits(greeting,selection,pick):
     elif frupick == "Apples":
         cashier("Apple",5, "You have added Apples!" )
     elif frupick == "Bananas":
-        cashier("Bananas",6,"You have added Bananas!" )
+        cashier("Bananas",5,"You have added Bananas!" )
     elif frupick == "Cherries":
-        cashier("Cherries",5,"You have added Cherries!" )
+        cashier("Cherries",4,"You have added Cherries!" )
     else:
         print("Sorry, this isn't a choice.")
         
@@ -83,7 +79,7 @@ def dairy(greeting,selection,pick):
     if dairypick == "None":
         print("Goodbye")
     elif dairypick == "Cheese":
-        cashier("Cheese",5,"You have added Cheese!" )
+        cashier("Cheese",3,"You have added Cheese!" )
     elif dairypick == "Eggs":
         cashier("Eggs",6, "You have added Eggs!" )
     elif dairypick == "Milk":
@@ -116,9 +112,9 @@ def press(btn):
     elif btn == "Vegetables":
         vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like? If you want to leave enter None ")
     elif btn == "Fruits":
-          fruits()    
+          fruits("Welcome to our Fruits section! Here are your choices:",fruitlist,"Which fruits would you like? If you want to leave enter None ") 
     elif btn == "Dairy":
-          dairy()    
+          dairy("Welcome to our Dairy section! Here are your choices:", dairylist, "Which dairy items would you like? If you want to leave enter None ")
     elif btn == "Cashier":
         cashier('Enjoy your groceries!')      
     else:

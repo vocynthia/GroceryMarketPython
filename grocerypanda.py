@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-
+This code I modified of our team's code to also allow the customer to have a receipt of what they bought and the overall cost. - Cynthia
 @author: Cynthia Vo,  Wendy Vo, Deepthi Vasudevan, Jerry Tseng
 """
 from appJar import gui
@@ -28,9 +28,9 @@ def greet_user(greeting,sentinel,categoryq,readyq):
     if canswer == "Vegetables":
         vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like? If you want to leave enter None  ")
     elif canswer == "Fruits":
-        fruits("Welcome to our Fruits section!  Here are your choices:",fruitlist,"Which dairy would you like? If you want to leave enter None  ")
+        fruits("Welcome to our Fruits section!  Here are your choices:",fruitlist,"Which fruits would you like? If you want to leave enter None  ")
     elif canswer == "Dairy":
-        dairy("Welcome to our Dairy section!  Here are your choices:",dairylist,"Which fruits would you like? If you want to leave enter None ")
+        dairy("Welcome to our Dairy section!  Here are your choices:",dairylist,"Which dairy would you like? If you want to leave enter None ")
     else:
         print('Sorry, we do not carry that category.  See you next time!')
     

@@ -45,6 +45,7 @@ def  vegetables(greeting,selection,pick):
         print("Goodbye")
     elif vegpick == "Broccoli":
         cashier("Broccoli",5,"You have added Broccolli!" )
+        cashier("Broccoli",5,"You have added Broccoli!" )
     elif vegpick == "Carrots":
         cashier("Carrots",6,"You have added Carrots!" )
     elif vegpick == "Tomatoes":
@@ -53,12 +54,12 @@ def  vegetables(greeting,selection,pick):
         print("Sorry, this isn't a choice.")
 
 #Deepthi - Fruit Function
-def fruits():
-    print('fruit')
+def fruits(greeting,selection,pick):
+    print(greeting)
     for item in selection:
         print(item)
     frupick = input(pick)
-    if fruipick == "None":
+    if frupick == "None":
         print("Goodbye")
     elif frupick == "Apples":
         cashier("Apple",5, "You have added Apples!" )
@@ -71,8 +72,8 @@ def fruits():
         
 
 # Deepthi - Dairy Function
-def dairy():
-    print('dairy)')
+def dairy(greeting,selection,pick):
+    print(greeting)
     for item in selection:
         print(item)
     dairypick = input(pick)
@@ -104,9 +105,9 @@ def press(btn):
     elif btn == "Vegetables":
         vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like? If you want to leave enter None ")
     elif btn == "Fruits":
-          fruits("Welcome to our Fruits section! Here are your choices:"),fruitlist,"Which fruits would you like? If you want to leave enter None ") 
+          fruits("Welcome to our Fruits section! Here are your choices:",fruitlist,"Which fruits would you like? If you want to leave enter None ") 
     elif btn == "Dairy":
-          dairy("Welcome to our Dairy section! Here are your choices:"), dairylist, "Which dairy items would you like? If you want to leave enter None ")   
+          dairy("Welcome to our Dairy section! Here are your choices:", dairylist, "Which dairy items would you like? If you want to leave enter None ")   
     elif btn == "Cashier":
         cashier()      
     else:

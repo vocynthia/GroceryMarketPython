@@ -18,8 +18,22 @@ dairylist  = list(grocery.Dairy)
 
 
 # Wendy - Greeting Function
-def greet_user():
-    print('hi')
+def greet_user(greeting,sentinel,categoryq,readyq):
+    canswer = ' '
+    ranswer = sentinel
+    print(greeting)
+    while ranswer == 'n':
+        ranswer = input(readyq)
+    canswer = input(categoryq)
+       
+    if canswer == "Vegetables":
+        vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like or enter None? ")
+    elif canswer == "Fruits":
+        fruits("Welcome to our Fruits section!  Here are your choices:",fruitlist,"Which fruits would you like or enter None? ")
+    elif canswer == "Dairy":
+        dairy("Welcome to our Dairy section!  Here are your choices:",dairylist,"Which dairy products would you like or enter None? ")
+    else:
+        print('Sorry, we do not carry that category.  See you next time!')
     
 # Cynthia - Vegetable Function
 def  vegetables(greeting,selection,pick):
@@ -30,7 +44,7 @@ def  vegetables(greeting,selection,pick):
     if vegpick == "None":
         print("Goodbye")
     elif vegpick == "Broccoli":
-        cashier("Broccoli",5,"You have added Broccoli!" )
+        cashier("Broccoli",5,"You have added Broccolli!" )
     elif vegpick == "Carrots":
         cashier("Carrots",6,"You have added Carrots!" )
     elif vegpick == "Tomatoes":
@@ -86,7 +100,7 @@ def press(btn):
     if btn == "Exit":
         app.stop()
     elif btn == "Greeting":
-        greet_user()
+        greet_user("Welcome to our Online Supermarket!\n", "n", "Which grocery product category would you like to browse (Vegetables, Fruits, Dairy)? ", "Ready to browse (y/n)? ")
     elif btn == "Vegetables":
         vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like? If you want to leave enter None ")
     elif btn == "Fruits":

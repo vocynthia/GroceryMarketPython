@@ -45,7 +45,10 @@ def  vegetables(greeting,selection,pick):
         print("Goodbye")
     elif vegpick == "Broccoli":
         cashier("Broccoli",5,"You have added Broccolli!" )
+<<<<<<< HEAD
         cashier("Broccoli",5,"You have added Broccoli!" )
+=======
+>>>>>>> c608ac1 (Update grocerypanda.py)
     elif vegpick == "Carrots":
         cashier("Carrots",6,"You have added Carrots!" )
     elif vegpick == "Tomatoes":
@@ -109,7 +112,6 @@ def press(btn):
     if btn == "Exit":
         app.stop()
     elif btn == "Greeting":
-        greet_user()
     elif btn == "Vegetables":
         vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like? If you want to leave enter None ")
     elif btn == "Fruits":

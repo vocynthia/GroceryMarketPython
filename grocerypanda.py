@@ -112,6 +112,7 @@ def press(btn):
     if btn == "Exit":
         app.stop()
     elif btn == "Greeting":
+        greet_user("Welcome to our Online Supermarket!\n", "n", "Which grocery product category would you like to browse (Vegetables, Fruits, Dairy)? ", "Ready to browse (y/n)? ")
     elif btn == "Vegetables":
         vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like? If you want to leave enter None ")
     elif btn == "Fruits":

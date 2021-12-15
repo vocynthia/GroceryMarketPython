@@ -30,7 +30,7 @@ def  vegetables(greeting,selection,pick):
     if vegpick == "None":
         print("Goodbye")
     elif vegpick == "Broccoli":
-        cashier("Broccoli",5,"You have added Broccolli!" )
+        cashier("Broccoli",5,"You have added Broccoli!" )
     elif vegpick == "Carrots":
         cashier("Carrots",6,"You have added Carrots!" )
     elif vegpick == "Tomatoes":

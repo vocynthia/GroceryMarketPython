@@ -19,7 +19,7 @@ dairylist  = list(grocery.Dairy)
 
 # Wendy - Greeting Function
 def greet_user():
-    print('hi')
+    print('bye')
     
 # Cynthia - Vegetable Function
 def  vegetables(greeting,selection,pick):

@@ -112,7 +112,6 @@ def dairy(greeting,selection,pick):
 def cashier(pickeditem, price, closing):
     print("Your cost for the", pickeditem, "will be $"+str(price))
     x = input("Would you like to buy another item? (y/n)")
-    print('Goodbye')
     if x == "y":
         greet_user("Great!", "n", "Which grocery product category would you like to browse (Vegetables, Fruits, Dairy)?", "Ready to browse? (y/n)")
     else: 

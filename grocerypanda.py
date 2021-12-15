@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-@author: Cynthia Vo,  Wendy Vo, Deepthi Vasudevan, Cynthia Vo
+@author: Cynthia Vo,  Wendy Vo, Deepthi Vasudevan, Jerry Tseng
 """
 from appJar import gui
 import pandas
@@ -89,8 +89,16 @@ def dairy(greeting,selection,pick):
         print("Sorry, this is isn't a choice.")
 
 # Jerry - Cashier Function
-def cashier():
+def cashier(pickeditem, price, closing):
+    print("Your cost for the", pickeditem, "will be $"+str(price))
+    x = input("Would you like to buy another item? (y / n)")
     print('bye')
+    if x == "y":
+        greet_user("Great!", "n", "What other category would you like to browse? (fruit / dairy / vegetable)", "Ready to browse? (y / n)")
+    else: 
+        for i in closing:
+            print(i)
+    
 
 
 
@@ -101,15 +109,15 @@ def press(btn):
     if btn == "Exit":
         app.stop()
     elif btn == "Greeting":
-        greet_user("Welcome to our Online Supermarket!\n", "n", "Which grocery product category would you like to browse (Vegetables, Fruits, Dairy)? ", "Ready to browse (y/n)? ")
+        greet_user()
     elif btn == "Vegetables":
         vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like? If you want to leave enter None ")
     elif btn == "Fruits":
-          fruits("Welcome to our Fruits section! Here are your choices:",fruitlist,"Which fruits would you like? If you want to leave enter None ") 
+          fruits()    
     elif btn == "Dairy":
-          dairy("Welcome to our Dairy section! Here are your choices:", dairylist, "Which dairy items would you like? If you want to leave enter None ")   
+          dairy()    
     elif btn == "Cashier":
-        cashier()      
+        cashier('Enjoy your groceries!')      
     else:
         print('Pick a valid option')
 

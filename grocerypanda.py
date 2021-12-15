@@ -9,14 +9,13 @@ import pandas
 app=gui("Main Menu","500x500")
 
 
-# Cynthia - Overall Integration
+# Cynthia - Overall Integration and added calculations
 grocery = pandas.read_csv("grocery.csv")
 veglist = list(grocery.Vegetables)
 fruitlist = list(grocery.Fruits)
 dairylist  = list(grocery.Dairy)
-
-
-
+itemlist = []
+itemprice = []
 # Wendy - Greeting Function
 def greet_user(greeting,sentinel,categoryq,readyq):
     canswer = ' '
@@ -27,11 +26,11 @@ def greet_user(greeting,sentinel,categoryq,readyq):
     canswer = input(categoryq)
        
     if canswer == "Vegetables":
-        vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like or enter None? ")
+        vegetables("Welcome to our Vegetables section! Here are your choices:",veglist,"Which vegetables would you like? If you want to leave enter None  ")
     elif canswer == "Fruits":
-        fruits("Welcome to our Fruits section!  Here are your choices:",fruitlist,"Which fruits would you like or enter None? ")
+        fruits("Welcome to our Fruits section!  Here are your choices:",fruitlist,"Which dairy would you like? If you want to leave enter None  ")
     elif canswer == "Dairy":
-        dairy("Welcome to our Dairy section!  Here are your choices:",dairylist,"Which dairy products would you like or enter None? ")
+        dairy("Welcome to our Dairy section!  Here are your choices:",dairylist,"Which fruits would you like? If you want to leave enter None ")
     else:
         print('Sorry, we do not carry that category.  See you next time!')
     
@@ -44,11 +43,20 @@ def  vegetables(greeting,selection,pick):
     if vegpick == "None":
         print("Goodbye")
     elif vegpick == "Broccoli":
-        cashier("Broccoli",5,"You have added Broccoli!" )
+        itemlist.append(vegpick)
+        itemprice.append(5)
+        cashier("Broccoli",5,"Enjoy your groceries!" )
+        
     elif vegpick == "Carrots":
-        cashier("Carrots",6,"You have added Carrots!" )
+        itemlist.append(vegpick)
+        itemprice.append(6)
+        cashier("Carrots",6,"Enjoy your groceries!" )
+    
     elif vegpick == "Tomatoes":
-        cashier("Tomatoes",5,"You have added Tomatoes!" )
+        itemlist.append(vegpick)
+        itemprice.append(5)
+        cashier("Tomatoes",5,"Enjoy your groceries!" )
+        
     else:
         print("Sorry, this isn't a choice.")
 
@@ -61,11 +69,17 @@ def fruits(greeting,selection,pick):
     if frupick == "None":
         print("Goodbye")
     elif frupick == "Apples":
-        cashier("Apple",5, "You have added Apples!" )
+        itemlist.append(frupick)
+        itemprice.append(5)
+        cashier("Apple",5, "Enjoy your groceries!" )
     elif frupick == "Bananas":
-        cashier("Bananas",5,"You have added Bananas!" )
+        itemlist.append(frupick)
+        itemprice.append(5)
+        cashier("Bananas",5,"Enjoy your groceries!" )
     elif frupick == "Cherries":
-        cashier("Cherries",4,"You have added Cherries!" )
+        itemlist.append(frupick)
+        itemprice.append(4)
+        cashier("Cherries",4,"Enjoy your groceries!" )
     else:
         print("Sorry, this isn't a choice.")
         
@@ -79,24 +93,38 @@ def dairy(greeting,selection,pick):
     if dairypick == "None":
         print("Goodbye")
     elif dairypick == "Cheese":
-        cashier("Cheese",3,"You have added Cheese!" )
+        itemlist.append(dairypick)
+        itemprice.append(3)
+        cashier("Cheese",3,"Enjoy your groceries!" )
     elif dairypick == "Eggs":
-        cashier("Eggs",6, "You have added Eggs!" )
+        itemlist.append(dairypick)
+        itemprice.append(6)
+        cashier("Eggs",6, "Enjoy your groceries!" )
+        
     elif dairypick == "Milk":
-        cashier("Milk",5,"You have added Milk!" )
+        itemlist.append(dairypick)
+        itemprice.append(5)
+        cashier("Milk",5,"Enjoy your groceries!" )
     else:
         print("Sorry, this is isn't a choice.")
 
 # Jerry - Cashier Function
 def cashier(pickeditem, price, closing):
     print("Your cost for the", pickeditem, "will be $"+str(price))
-    x = input("Would you like to buy another item? (y / n)")
-    print('bye')
+    x = input("Would you like to buy another item? (y/n)")
+    print('Goodbye')
     if x == "y":
-        greet_user("Great!", "n", "What other category would you like to browse? (fruit / dairy / vegetable)", "Ready to browse? (y / n)")
+        greet_user("Great!", "n", "Which grocery product category would you like to browse (Vegetables, Fruits, Dairy)?", "Ready to browse? (y/n)")
     else: 
+        print('Here is your receipt: ')
+        for i in itemlist:
+            print('-'+i) 
+        print('your total is $'+str(sum(itemprice)))
+        print()
         for i in closing:
             print(i)
+        
+        
     
 
 
@@ -116,7 +144,14 @@ def press(btn):
     elif btn == "Dairy":
           dairy("Welcome to our Dairy section! Here are your choices:", dairylist, "Which dairy items would you like? If you want to leave enter None ")
     elif btn == "Cashier":
-        cashier('Enjoy your groceries!')      
+        closing = 'Enjoy your groceries!'
+        print('Here is your receipt: ')
+        for i in itemlist:
+            print('-'+i) 
+        print('your total is $'+str(sum(itemprice)))
+        print()
+        for i in closing:
+            print(i)
     else:
         print('Pick a valid option')
 
